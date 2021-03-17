@@ -1,0 +1,38 @@
+header {
+    position: fixed;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    top: 0;
+    color: silver;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.leftSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    padding-right: 50px;
+}
+
+.centerSide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 50px;
+}
+
+.rightSide {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 200px;
+    height: 50px;
+    padding-left: 30px;
+}

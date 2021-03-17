@@ -6,27 +6,26 @@ import {
     Route,
 } from "react-router-dom";
 
-import Navigation from "./components/Navigation/navigation";
-import Books from "./components/Navigation/BooksComponenst/books";
+import {Navigation} from "./components/Navigation/navigation";
 import MainPage from "./components/Navigation/mainPage";
+import Books from "./components/Navigation/BooksComponenst/books";
+import Video_Lessons from "./components/Navigation/VideoLessons/Video_Lessons";
+import HistoryInTheFrame from "./components/Navigation/HistoryIntheFrame/HistoryInTheFrame";
+import Standart from "./components/Navigation/BooksComponenst/BallroomFigures/Standart";
 
-export default function App() {
+export default function App(props) {
     return (
-        <div>
-            <Router>
-        <Switch>
+        <Router>
             <Navigation/>
-        </Switch>
+            <Switch>
+                <Route path={'/'} exact{...props} component={MainPage}/>
+                <Route path='/books' exact{...props} component={Books}/>
+                <Route path='/main' exact{...props} component={MainPage}/>
+                <Route path='/Video_lessons' exact{...props} component={Video_Lessons}/>
+                <Route path='/History_in_the_frame' exact{...props} component={HistoryInTheFrame}/>
+                <Route path='/Ballroom_Figures' exact{...props} component={Standart}/>
 
-                <Switch>
-                    <Route path={'/'} component={MainPage}/>
-                    <Route path={'/books'} component={Books}/>
-
-                </Switch>
-            </Router>
-            </div>
-
-
-
+            </Switch>
+        </Router>
     );
 }

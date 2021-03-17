@@ -1,45 +1,40 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
-import './mainPage.css'
+import './nivigation.css'
+import logo from "../../img/Logo_DanceEducation.png";
 
-
-class Navigation extends Component {
-    render() {
+export const Navigation = () =>{
         return (
 
             <header>
                 <div className={'leftSide'}>
-                    <a className={'leftSide_logo'}>
-                        LeftSideLogo
-                    </a>
+                    <NavLink to={'/main'} className={'leftSide_logo'}>
+                        <img src={logo}/>
+                    </NavLink>
                 </div>
                 <div className={'centerSide'}>
                     <NavLink to={'/books'}>
-                        Books
+                        <div className={'centerTextSmall'}>Books</div>
+                    </NavLink>
+
+                    <NavLink to='/Video_lessons'>
+                        <div className={'centerTextSmall'}>Video Lessons</div>
+                    </NavLink>
+
+                    <NavLink to='/books'>
+                        <div className={'centerTextSmall'}>History</div>
+                    </NavLink>
+
+                    <NavLink to='/History_in_the_frame'>
+                        <div className={'centerTextSmall'}>History in the Frame</div>
+                    </NavLink>
+
+                    <NavLink to='/books'>
+                        <div className={'centerTextSmall'}>Our team</div>
                     </NavLink>
                 </div>
-                {/*<div className={'centerSide'}>*/}
-                {/*    <NavLink to='/books'>*/}
-                {/*        Figure*/}
-                {/*    </NavLink>*/}
-                {/*</div>*/}
-                {/*<div className={'centerSide'}>*/}
-                {/*    <NavLink to='/books'>*/}
-                {/*        History*/}
-                {/*    </NavLink>*/}
-                {/*</div>*/}
-                {/*<div className={'centerSide'}>*/}
-                {/*    <NavLink to='/books'>*/}
-                {/*        History in the Frame*/}
-                {/*    </NavLink>*/}
-                {/*</div>*/}
-                {/*<div className={'centerSide'}>*/}
-                {/*    <NavLink to='/books'>*/}
-                {/*        Our team*/}
-                {/*    </NavLink>*/}
-                {/*</div>*/}
                 <div className={'rightSide'}>
-                    <p>
+                    <p className={'centerTextSmall'}>
                         Language
                     </p>
                     <p>
@@ -48,10 +43,6 @@ class Navigation extends Component {
                 </div>
             </header>
 
-
-
         );
-    }
 }
 
-export default Navigation;
