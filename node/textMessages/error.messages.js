@@ -70,5 +70,9 @@ module.exports = {
     NOT_FOUND: {
         status: 401,
         customCode: 4021
+    },
+    WRONG_MAIL_ACTION: {
+        status: 401,
+        customCode: 4022
     }
 };

@@ -1,0 +1,21 @@
+.footer {
+   background-color: gold;
+}
+
+.main {
+   background: linear-gradient(45deg, #C02425, #F0CB35);
+   background-size: 300% 300%;
+   animation: main_animation 10s ease infinite;
+}
+
+@keyframes main_animation {
+   0% {
+      background-position: 0 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0 50%;
+   }
+}
