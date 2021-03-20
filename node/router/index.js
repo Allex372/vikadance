@@ -4,4 +4,5 @@ module.exports = {
     adminRouter: require('./admin.router'),
     userRouter: require('./user.router'),
     registrationRouter: require('./registration.router'),
+    forgotPassword: require('./forgot_password')
 };

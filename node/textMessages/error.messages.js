@@ -74,5 +74,9 @@ module.exports = {
     WRONG_MAIL_ACTION: {
         status: 401,
         customCode: 4022
-    }
+    },
+    WRONG_SECRET_WORD: {
+        status: 401,
+        customCode: 4023
+    },
 };

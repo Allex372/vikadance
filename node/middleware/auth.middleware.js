@@ -1,34 +1,34 @@
 const jwt = require('jsonwebtoken');
 const { O_Auth } = require('../dataBase/model');
 const { config: { JWT_ACCESS_SECRET, JWT_REFRESH_SECRET } } = require('../config');
-const { constants: { AUTHORIZATION }, errorCodesEnum,   } = require('../constant');
+const { constants: { AUTHORIZATION }, errorCodesEnum, } = require('../constant');
 const { ErrorHendler, errorMessage } = require('../textMessages');
 const { authService } = require('../service');
 
 module.exports = {
-    checkAccessToken: async (req, res, next) => {
+    checkAccessToken: (req, res, next) => {
         try {
             const access_token = req.get('Authorization');
 
             if (!access_token) {
-                throw new Error('You have not token')
+                throw new Error('You have not token');
             }
 
             const tokens = O_Auth.findOne({ access_token }).populate('user');
 
-            if (!tokens){
+            if (!tokens) {
                 throw new Error('Not valid token');
             }
 
             jwt.verify(access_token, JWT_ACCESS_SECRET, (err) => {
-                if (err){
+                if (err) {
                     throw new Error('Not verify token');
                 }
             });
 
             next();
         } catch (e) {
-          res.json(e.message)
+            res.json(e.message);
         }
     },
 
